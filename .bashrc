@@ -116,6 +116,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
-alias instalar_servidor_apache="sudo apt install apache2"
+alias instalar_servidor_apache="sudo apt install apache2 libapache2-mod-php8.1 -y"
 alias actualiza_todo="sudo apt update && sudo apt upgrade -y && sudo apt autoremove"
 alias add_repo_php_8="sudo add-apt-repository ppa:ondrej/php"
+alias instala_php8="sudo apt install php8.1"
+alias open_port_80_43="sudo ufw allow 80/tcp && sudo ufw allow 43/tcp"
+alias instala_mysql_server="sudo apt install mysql-server"
+alias asegurar_mysql="sudo mysql_secure_installation"
+alias lampStack="actualiza_todo && instalar_servidor_apache && add_repo_php_8 && instala_php8 && open_port_80_43 && instala_mysql_server && asegurar_mysql"
+
